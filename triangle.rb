@@ -14,9 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def twoSidesAreGreater?(a,b,c)
-  return false if a + b < c
-  return false if a + c < b
-  return false if b + c < a
+  return false if a + b <= c
+  return false if a + c <= b
+  return false if b + c <= a
 
   true
 end
@@ -24,7 +24,7 @@ end
 def triangle(a, b, c)
   raise TriangleError if a <= 0 || b <=0 || c <= 0
   raise TriangleError unless twoSidesAreGreater?(a,b,c)
-  
+
   return :equilateral if a == b && a == c
   return :isosceles if a == b || a == c || b == c
   :scalene
