@@ -31,7 +31,7 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   s = 0
-  s = 1000 if dice.count(1) == 3
+  s = 1000 if dice.count(1) >= 3
   
   (2..6).each { |x| s += x * 100 if dice.count(x) >= 3 }
   
